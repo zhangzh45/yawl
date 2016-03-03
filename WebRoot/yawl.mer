@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="mysql" database="yawl" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="auditlog">
+      <Drawing expanded="true" location="774,926" dimensions="189,110" />
+      <Columns>
+        <Column name="rowid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="userName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="eventType" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="eventTime" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="casedatadocument">
+      <Drawing expanded="true" location="208,526" dimensions="226,70" />
+      <Columns>
+        <Column name="net_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="casedata" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="casenbrstore">
+      <Drawing expanded="true" location="222,1236" dimensions="135,70" />
+      <Columns>
+        <Column name="pkey" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="caseNbr" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="clientapps">
+      <Drawing expanded="true" location="306,1101" dimensions="215,90" />
+      <Columns>
+        <Column name="userID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="passwordText" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="documentation" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="delayedlaunch">
+      <Drawing expanded="true" location="0,651" dimensions="196,230" />
+      <Columns>
+        <Column name="itemid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="endtime" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="specID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specVersion" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specURI" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="caseParams" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="caseID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="serviceURI" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="observer" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="logData" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="logdataitem">
+      <Drawing expanded="true" location="241,651" dimensions="244,150" />
+      <Columns>
+        <Column name="dataItemID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="eventID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="itemName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="itemValue" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+        <Column name="descriptor" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="dataTypeID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="logdatatype">
+      <Drawing expanded="true" location="0,1101" dimensions="261,90" />
+      <Columns>
+        <Column name="dataTypeID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="dataTypeName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="definition" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="logevent">
+      <Drawing expanded="true" location="530,651" dimensions="229,150" />
+      <Columns>
+        <Column name="eventID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="descriptor" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="eventTime" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="instanceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="serviceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="rootNetInstanceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="lognet">
+      <Drawing expanded="true" location="812,1101" dimensions="182,90" />
+      <Columns>
+        <Column name="netID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="specKey" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="netName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="lognetinstance">
+      <Drawing expanded="true" location="241,926" dimensions="246,110" />
+      <Columns>
+        <Column name="netInstanceID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="engineInstanceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="netID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="parentTaskInstanceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="logservice">
+      <Drawing expanded="true" location="566,1101" dimensions="201,90" />
+      <Columns>
+        <Column name="serviceID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="serviceName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="url" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="logspecification">
+      <Drawing expanded="true" location="0,926" dimensions="196,130" />
+      <Columns>
+        <Column name="rowKey" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="rootNetID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="identifier" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specVersion" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="uri" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="logtask">
+      <Drawing expanded="true" location="532,926" dimensions="197,110" />
+      <Columns>
+        <Column name="taskID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="taskName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="parentNetID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="childNetID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="logtaskinstance">
+      <Drawing expanded="true" location="804,651" dimensions="246,130" />
+      <Columns>
+        <Column name="taskInstanceID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="engineInstanceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="taskID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="parentNetInstanceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="parentTaskInstanceID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="problems">
+      <Drawing expanded="true" location="1008,926" dimensions="255,109" />
+      <Columns>
+        <Column name="source" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="problemTime" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="DATETIME" size="19" />
+        </Column>
+        <Column name="messageType" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="message" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="runner_busy_tasks">
+      <Drawing expanded="true" location="0,9" dimensions="186,70" />
+      <Columns>
+        <Column name="runner_id" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="task" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="runner_enabled_tasks">
+      <Drawing expanded="true" location="573,9" dimensions="186,70" />
+      <Columns>
+        <Column name="runner_id" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="task" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="runner_states">
+      <Drawing expanded="true" location="264,189" dimensions="231,228" />
+      <Columns>
+        <Column name="case_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="identifier" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="casedata" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specVersion" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specURI" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="containing_task_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="startTime" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="caseObserver" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="executionStatus" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="specifications">
+      <Drawing expanded="true" location="1039,1101" dimensions="228,70" />
+      <Columns>
+        <Column name="rowKey" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="specXML" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="timerstates">
+      <Drawing expanded="true" location="286,0" dimensions="187,89" />
+      <Columns>
+        <Column name="case_id" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="timerstate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="taskname" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="work_items">
+      <Drawing expanded="true" location="912,60" dimensions="328,408" />
+      <Columns>
+        <Column name="thisid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specVersion" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="specURI" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="enablement_time" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATETIME" size="19" />
+        </Column>
+        <Column name="firing_time" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATETIME" size="19" />
+        </Column>
+        <Column name="start_time" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATETIME" size="19" />
+        </Column>
+        <Column name="status" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="prevstatus" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="ownerService" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="allows_dynamic_creation" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
+        <Column name="requires_manual_resourcing" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
+        <Column name="data_string" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+        <Column name="timerstarted" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
+        <Column name="timerexpiry" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="deferredgroupid" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="codelet" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="parent" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="parent_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="workitemtimer">
+      <Drawing expanded="true" location="0,1236" dimensions="177,70" />
+      <Columns>
+        <Column name="itemid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="endtime" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="yidentifiers">
+      <Drawing expanded="true" location="557,517" dimensions="177,89" />
+      <Columns>
+        <Column name="idString" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="parent" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="ix" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="ylocations">
+      <Drawing expanded="true" location="602,258" dimensions="205,89" />
+      <Columns>
+        <Column name="id_key" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="loc_condition" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="ix" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="yservices">
+      <Drawing expanded="true" location="1095,651" dimensions="219,130" />
+      <Columns>
+        <Column name="serviceid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="serviceName" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="servicePassword" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="documentation" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="assignable" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="FKDDEAB617B187728D">
+      <Details primary_table="runner_states" foreign_table="runner_busy_tasks">
+        <PrimaryKeys>
+          <ColumnName name="case_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="runner_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK7BFAB201B187728D">
+      <Details primary_table="runner_states" foreign_table="runner_enabled_tasks">
+        <PrimaryKeys>
+          <ColumnName name="case_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="runner_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK3065F5F1B07622D4">
+      <Details primary_table="yidentifiers" foreign_table="runner_states">
+        <PrimaryKeys>
+          <ColumnName name="idString" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="identifier" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK3065F5F17B776A17">
+      <Details primary_table="casedatadocument" foreign_table="runner_states">
+        <PrimaryKeys>
+          <ColumnName name="net_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="casedata" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK200E8D87D5D0568D">
+      <Details primary_table="runner_states" foreign_table="timerstates">
+        <PrimaryKeys>
+          <ColumnName name="case_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="case_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK5379AD12FD3860FE">
+      <Details primary_table="work_items" foreign_table="work_items">
+        <PrimaryKeys>
+          <ColumnName name="thisid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="parent_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK5379AD12467CB8D8">
+      <Details primary_table="work_items" foreign_table="work_items">
+        <PrimaryKeys>
+          <ColumnName name="thisid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="parent" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK61B90ED1D5987ED5">
+      <Details primary_table="yidentifiers" foreign_table="yidentifiers">
+        <PrimaryKeys>
+          <ColumnName name="idString" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="parent" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK4C44BB05C9C84B66">
+      <Details primary_table="yidentifiers" foreign_table="ylocations">
+        <PrimaryKeys>
+          <ColumnName name="idString" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="id_key" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+
